@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('{{ "GOTHIC.TTF" | asset_url }}');
+    font-weight: normal;
+    font-style: normal;
+};
+
+body, 
+.h1, 
+.h2, 
+.h3, 
+.h4, 
+.h5, 
+.h6,
+p,
+a {
+  font-family: 'Century Gothic', serif !important;
+  text-transform: unset !important;
+}
+
+p {
+  font-size: 15px;
+  list-style: 22.5px;
+}
+
+.h1 {
+  font-size: 44px !important;
+  list-style: 61.6px;
+}
+
+.h4 {
+  font-size: 22px;
+}
+
+.h5 {
+  font-size: 18px !important;
+  line-height: 27px;
+}
+
+.index-sections .shopify-section {
+    margin-top: 50px;
+}
+
+.wrapper {
+    max-width: 1200px;
+}
+
+.hero__text-align {
+    position: relative;
+}
+
+.hero__text-content {
+    max-width: 580px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.right {
+      right: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+    &.center {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero__cta {
+        border-radius: 12px;
+    }
+}
+
+.list-with-image-section {
+  padding-bottom: 0;
+  
+  .section-background {
+      padding: 50px 0;
+  }
+  
+  .contain {
+    text-align: center;
+
+    .section-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .section-items__item {
+        width: 24%;
+        display: inline-block;
+        padding: 20px;
+        vertical-align: top;
+
+        @media only screen and (max-width: 480px) {
+          width: 100%;
+        }
+        
+        @media only screen and (min-width: 481px) and (max-width: 768px) {
+          width: 49%;
+        }
+        
+        .section-items__item--image {
+          margin-bottom: 30px;
+          min-height: 100px;
+          max-height: 100px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .section-items__item--description {
+        p {
+          text-transform: uppercase;
+          word-break: break-word;
+        }
+      }
+    }
+  }
+}
+
+.collection-grid {
+  margin-left: -5px;
+
+  .collection-collage__item {
+    padding-left: 10px;
+    margin-bottom: 10px;
+
+    &.large--one-half {
+      padding-top: 37.5%;
+    }
+  
+    .collection-grid__item-link {
+      position: absolute;
+      top: 0;
+
+      .collection-grid__item-title--wrapper {
+        height: unset;
+        width: unset;
+        top: 5%;
+        left: 5%;
+        
+        .collection-grid__item-title {
+          font-style: normal;
+          display: flex;
+
+          svg {
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

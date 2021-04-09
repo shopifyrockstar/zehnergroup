@@ -1,0 +1,89 @@
+{% assign title = section.settings.title %}
+{% assign content = section.settings.content %}
+{% assign background_color = section.settings.background_color %}
+
+<div class="section-background" style="background: {{ background_color }}">
+  <div class="contain">
+    <div class="wrapper">
+      <div class="section-content">
+        <div class="section-content__title">
+          <h1>{{ title }}</h1>
+        </div>
+        <div class="section-content__content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contain section-list">
+    <div class="wrapper">
+      <div class="section-items">
+        {% for block in section.blocks %}
+        <div class="section-items__item">
+          <div class="section-items__item--image">
+            <img src="{{ block.settings.item_image | img_url: "130x" }}" />
+          </div>
+          <div class="section-items__item--title">
+            <h6 class="h5">{{ block.settings.item_title }}</h6>
+          </div>
+          <div class="section-items__item--description">
+            {{ block.settings.item_description }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "List of images",
+    "class": "index-section list-with-image-section",
+      "settings": [
+        {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+        },
+        {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+        },
+        {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "items",
+        "name": "Items",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "item_image",
+            "label": "Item image"
+          },
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Item title"
+          },
+          {
+            "type": "richtext",
+            "id": "item_description",
+            "label": "Item description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "List of images",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
